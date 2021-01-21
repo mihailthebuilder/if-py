@@ -10,3 +10,9 @@ def make_pizza(*toppings):
 
 make_pizza("pepperoni")
 make_pizza("salami", "cheese", "pineapple")
+
+a = 1
+b = a
+a = 2
+print(a)
+print(b)

@@ -13,3 +13,5 @@ USER = "marie"
 
 if USER not in BANNED_USERS:
     print(USER.title() + ", you can post if you want.")
+
+print("x" in USER)

@@ -27,15 +27,19 @@ class User:
         self.login_attempts = 0
 
 
-user1 = User("mark", "twain")
-user2 = User("john", "lennon")
+class Privileges:
+    def __init__(self, privileges=["add post", "delete post", "ban user"]):
+        self.privileges = privileges
 
-print("User 1's last name is " + user1.last_name)
-user1.describe_user()
-user2.greet_user()
+    def show_privileges(self):
+        print("Privileges: " + ", ".join(self.privileges))
 
-user1.increment_login_attempts()
-print(user1.login_attempts)
 
-user1.reset_login_attempts()
-print(user1.login_attempts)
+class Admin(User):
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
+        self.privileges = Privileges()
+
+
+admin1 = Admin("claire", "cox")
+admin1.privileges.show_privileges()
